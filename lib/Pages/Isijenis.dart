@@ -3,7 +3,7 @@ import 'package:smart_money/Widget/theme.dart';
 
 class DetailJenis extends StatelessWidget {
   // Menambahkan parameter jenis pada konstruktor
-  final  jenis;
+  final jenis;
 
   const DetailJenis({super.key, required this.jenis}); // Menyertakan required
 
@@ -16,7 +16,7 @@ class DetailJenis extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildJenisDetails(context),
-            
+
             _buildTitle(context),
             _buildField(context),
             // Menampilkan gambar dan keterangan jenis
@@ -29,13 +29,27 @@ class DetailJenis extends StatelessWidget {
   // Membuat widget untuk menampilkan detail jenis
   Widget _buildJenisDetails(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        
-        Image.asset(jenis.foto, width: 30, height: 30,), // Menampilkan gambar jenis
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(
+          width: 100,
+        ),
+        Image.asset(
+          jenis.foto,
+          width: 30,
+          height: 30,
+        ), // Menampilkan gambar jenis
         SizedBox(width: 10),
         Text(jenis.nama, style: deskripsiwht),
-      
       ],
     );
   }
@@ -72,7 +86,6 @@ class DetailJenis extends StatelessWidget {
                 borderSide: BorderSide.none),
           ),
         ),
-       
         const SizedBox(
           height: 100,
         ),
