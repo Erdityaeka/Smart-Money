@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_money/Pages/Home.dart';
 import 'package:smart_money/Pages/Sigin.dart';
 import 'package:smart_money/Widget/theme.dart';
+import 'package:smart_money/bottomnav/bottom.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -98,7 +99,7 @@ class LoginScreen extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-           Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen()));
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> const TombolNav()));
           },
           child: Container(
             width: double.infinity,
